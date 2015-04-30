@@ -15,8 +15,11 @@ def all_odd(number_list):
         []
 
     """
-
-    return []
+    all_odd = []
+    for i in number_list:
+        if i % 2 != 0:
+            all_odd.append(i)
+    return all_odd
 
 
 def all_even(number_list):
@@ -30,7 +33,11 @@ def all_even(number_list):
 
     """
 
-    return []
+    all_even = []
+    for i in number_list:
+        if i % 2 == 0:
+            all_even.append(i)
+    return all_even
 
 
 def print_indeces(my_list):
@@ -51,8 +58,9 @@ def print_indeces(my_list):
     2 Volvo
 
     """
-    print "Nothing at all"
-    pass
+    for i in range(len(my_list)):
+        print i, my_list[i] 
+
 
 
 def long_words(word_list):
@@ -65,8 +73,11 @@ def long_words(word_list):
         []
 
     """
-
-    return []
+    long_words = []
+    for word in word_list:
+        if len(word) > 4:
+            long_words.append(word)
+    return long_words
 
 
 def smallest_int(number_list):
@@ -82,7 +93,12 @@ def smallest_int(number_list):
 
     """
 
-    return 100
+    while number_list != []:
+        return min(number_list)
+        break
+    else:
+        return None 
+
 
 
 def largest_int(number_list):
@@ -98,7 +114,11 @@ def largest_int(number_list):
 
     """
 
-    return 0
+    while number_list != []:
+        return max(number_list)
+        break
+    else:
+        return None 
 
 
 def halvesies(number_list):
@@ -114,7 +134,11 @@ def halvesies(number_list):
 
     """
 
-    return []
+    half_list = []
+    for i in number_list:
+        i = i/ 2.0
+        half_list.append(i)
+    return half_list
 
 
 def word_lengths(word_list):
@@ -125,7 +149,13 @@ def word_lengths(word_list):
 
     """
 
-    return []
+    word_length = []
+    for i in word_list:
+        word = len(i)
+        word_length.append(word)
+    else:
+        pass
+    print word_length
 
 
 def sum_numbers(number_list):
@@ -143,8 +173,11 @@ def sum_numbers(number_list):
         0
 
     """
-
-    return 0
+    
+    total = 0
+    for i in number_list:
+        total = total + i
+    return total
 
 
 def mult_numbers(number_list):
@@ -165,7 +198,10 @@ def mult_numbers(number_list):
         1
 
     """
-    return 0
+    total = 1
+    for item in number_list:
+        total *= item
+    return total
 
 
 def join_strings(word_list):
@@ -183,7 +219,15 @@ def join_strings(word_list):
         ''
 
     """
-    return ""
+    
+    
+    for i in word_list:
+        new_string = " "
+        if i in word_list:
+            new_string += i
+        else:
+            new_string = "''" 
+    print new_string
 
 
 def average(number_list):
@@ -195,7 +239,8 @@ def average(number_list):
     There is no defined answer if the list given is empty. It's fine if
     this raises an error when given an empty list.
     """
-    return 0
+    average = float(sum(number_list))/len(number_list)
+    return float(average)
 
 
 ##############################################################################
@@ -246,3 +291,4 @@ if __name__ == "__main__":
             a = doctest.run_docstring_examples(v, globals(), name=k)
     print "** END OF TEST OUTPUT"
     print
+
